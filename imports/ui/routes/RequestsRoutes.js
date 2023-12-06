@@ -6,10 +6,12 @@ import RequestInfo from "../components/requests/RequestInfo";
 import {RequestsPage} from "../components/requests/RequestsPage";
 
 const RequestsRoutes = () => {
-    return (<Routes>
-        <Route path="/" element={<RequestsPage/>}/>
-        <Route path=":id" element={<RequestInfo/>}/>
-    </Routes>);
+    return (
+        <Routes>
+            <Route path="/" element={<RequestsPage/>}/>
+            <Route path=":id" element={<RequestInfo/>}/>
+        </Routes>
+    );
 };
 
 export default RequestsRoutes;
