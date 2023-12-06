@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import '../styles/dialog.css';
 
-export const Dialog = ({ title, content, onClose }) => {
+export const Dialog = ({title, content, onClose}) => {
     const [isOpen, setIsOpen] = useState(true);
 
     const handleClose = () => {
@@ -19,7 +19,7 @@ export const Dialog = ({ title, content, onClose }) => {
                             <button onClick={handleClose}>Close</button>
                         </div>
                         <div className="dialog-content">
-                            <p>{content}</p>
+                            {content}
                         </div>
                     </div>
                 </div>
