@@ -1,6 +1,6 @@
 import React from 'react';
 import {useTracker} from 'meteor/react-meteor-data';
-import {useParams} from 'react-router-dom';
+import {useNavigate, useParams} from 'react-router-dom';
 import {ManufacturersCollection} from '../../../api/collections/ManufacturersCollection';
 import {CountriesCollection} from '../../../api/collections/CountriesCollection';
 
@@ -16,6 +16,18 @@ export const ManufacturerInfo = () => {
 
         return {isLoading, manufacturer, country};
     });
+    const navigate = useNavigate();
+
+    const handleDeleteManufacturer = async () => {
+        try {
+            await Meteor.call('manufacturers.delete', id);
+
+            navigate('/manufacturers');
+
+        }
+        catch (error) {
+        }
+    };
 
     if (isLoading) {
         return <div>Loading...</div>;
@@ -33,6 +45,7 @@ export const ManufacturerInfo = () => {
             ) : (
                 <p>Loading country data...</p>
             )}
+            <button onClick={handleDeleteManufacturer}>Delete</button>
         </div>
     );
 };
