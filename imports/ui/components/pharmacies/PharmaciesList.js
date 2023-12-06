@@ -17,15 +17,26 @@ export const PharmaciesList = () => {
     return (
         <div>
             <h2>List of Pharmacies</h2>
-            <ul>
-                {pharmacies.map(pharmacy => (
-                    <li key={pharmacy._id}>
-                        <a href={`/pharmacies/${pharmacy._id}`} style={{ textDecoration: 'none' }}>
-                            <h3>{pharmacy.name}</h3>
-                        </a>
-                    </li>
+            <table className="table">
+                <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Pharmacy Name</th>
+                </tr>
+                </thead>
+                <tbody>
+                {pharmacies.map((pharmacy, index) => (
+                    <tr key={pharmacy._id}>
+                        <td>{index + 1}</td>
+                        <td>
+                            <a href={`/pharmacies/${pharmacy._id}`} style={{ textDecoration: 'none' }}>
+                                <h3>{pharmacy.name}</h3>
+                            </a>
+                        </td>
+                    </tr>
                 ))}
-            </ul>
+                </tbody>
+            </table>
         </div>
     );
 };
