@@ -3,6 +3,8 @@ import {Accounts} from 'meteor/accounts-base';
 import {CountriesCollection} from '../imports/api/collections/CountriesCollection';
 import {ManufacturersCollection} from "../imports/api/collections/ManufacturersCollection";
 import {PharmaciesCollection} from "../imports/api/collections/PharmaciesCollection";
+import {RequestsCollection} from "../imports/api/collections/RequestsCollection";
+import {MedicinesCollection} from "../imports/api/collections/MedicinesCollection";
 
 Meteor.startup(() => {
     // Create an admin user if no users exist
@@ -49,3 +51,5 @@ const defineCrudMethods = (collection) => {
 defineCrudMethods(CountriesCollection);
 defineCrudMethods(ManufacturersCollection);
 defineCrudMethods(PharmaciesCollection);
+defineCrudMethods(RequestsCollection);
+defineCrudMethods(MedicinesCollection);
