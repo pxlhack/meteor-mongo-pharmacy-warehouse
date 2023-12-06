@@ -145,7 +145,7 @@ export const CreateRequest = () => {
                 <label>
                     Creation Date:
                     <input
-                        type="text"
+                        type="date"
                         value={creationDate}
                         onChange={handleCreationDateChange}
                     />
@@ -154,7 +154,7 @@ export const CreateRequest = () => {
                 <label>
                     Completion Date:
                     <input
-                        type="text"
+                        type="date"
                         value={completionDate}
                         onChange={handleCompletionDateChange}
                     />
