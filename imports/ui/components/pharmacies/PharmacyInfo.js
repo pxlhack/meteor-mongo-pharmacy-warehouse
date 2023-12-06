@@ -44,6 +44,17 @@ export const PharmacyInfo = () => {
         }
     };
 
+    const handleDeletePharmacy = async () => {
+        try {
+            await Meteor.call('pharmacies.delete', id);
+
+            navigate('/pharmacies');
+
+        } catch (error) {
+        }
+    };
+
+
     return (
         <div>
             <h2>{pharmacy.name}</h2>
@@ -51,6 +62,7 @@ export const PharmacyInfo = () => {
             <p>Address: {pharmacy.address}</p>
 
             <button onClick={handleEditPharmacy}>Edit</button>
+            <button onClick={handleDeletePharmacy}>Delete</button>
 
             {isEditDialogOpen && (
                 <Dialog
