@@ -7,6 +7,7 @@ import {TaskForm} from './components/TaskForm';
 import {LoginForm} from './components/LoginForm';
 import {Header} from "./components/Header";
 import {BrowserRouter, Routes} from "react-router-dom";
+import AppRoutes from "./routes/AppRoutes";
 
 const toggleChecked = ({_id, isChecked}) => {
     Meteor.call('tasks.setChecked', _id, !isChecked);
@@ -49,6 +50,7 @@ export const App = () => {
         <>
             <BrowserRouter>
                 <Header/>
+                <AppRoutes/>
             </BrowserRouter>
 
             <div className="simple-todos-react">
