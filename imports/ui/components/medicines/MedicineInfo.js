@@ -4,7 +4,6 @@ import {useParams, Link, useNavigate} from 'react-router-dom';
 import {MedicinesCollection} from '../../../api/collections/MedicinesCollection';
 import {ManufacturersCollection} from '../../../api/collections/ManufacturersCollection';
 import {Dialog} from "../Dialog";
-import {EditManufacturerForm} from "../manufacturers/EditManufacturerForm";
 import {EditMedicineForm} from "./EditMedicineForm";
 
 export const MedicineInfo = () => {

@@ -2,7 +2,7 @@
 
 import React from 'react';
 import {Routes, Route} from 'react-router-dom';
-import RequestInfo from "../components/requests/RequestInfo";
+import {RequestInfo} from "../components/requests/RequestInfo";
 import {RequestsPage} from "../components/requests/RequestsPage";
 
 const RequestsRoutes = () => {
