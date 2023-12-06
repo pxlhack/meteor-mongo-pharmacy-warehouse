@@ -53,7 +53,7 @@ export const App = () => {
                 <AppRoutes/>
             </BrowserRouter>
 
-            <div className="simple-todos-react">
+            {/* <div className="simple-todos-react">
                 <h1>Todo List ({incompleteTasksCount})</h1>
 
                 <div className="filters">
@@ -79,7 +79,7 @@ export const App = () => {
                 </ul>
 
                 <TaskForm/>
-            </div>
+            </div>*/}
         </>
     );
 };
