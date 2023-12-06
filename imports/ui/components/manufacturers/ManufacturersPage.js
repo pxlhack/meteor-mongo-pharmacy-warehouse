@@ -4,8 +4,8 @@ import {CreateManufacturer} from "./CreateManufacturer";
 
 export const ManufacturersPage = () => {
     return (<div>
-        <ManufacturersList/>
         <CreateManufacturer/>
+        <ManufacturersList/>
     </div>);
 }
 
