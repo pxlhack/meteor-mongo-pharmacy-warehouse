@@ -2,7 +2,7 @@ import React from "react";
 import {Link} from "react-router-dom";
 import "../styles/header.css"
 
-export const Header = () => {
+export const Header = ({user}) => {
     return (
         <div className="header-container">
             <header>
@@ -11,6 +11,7 @@ export const Header = () => {
                 <Link to="/manufacturers" className="header-link">Manufacturers</Link>
                 <Link to="/medicines" className="header-link">Medicines</Link>
                 <Link to="/countries" className="header-link">Countries</Link>
+                {user ? <button onClick={Meteor.logout}>Logout</button> : null}
             </header>
         </div>
     );

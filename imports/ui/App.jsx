@@ -1,39 +1,16 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {useTracker} from 'meteor/react-meteor-data';
-import _ from 'lodash';
-import {Task} from './components/Task';
-import {Tasks} from '/imports/api/tasks';
-import {TaskForm} from './components/TaskForm';
+
 import {LoginForm} from './components/LoginForm';
 import {Header} from "./components/Header";
-import {BrowserRouter, Routes} from "react-router-dom";
+import {BrowserRouter} from "react-router-dom";
 import AppRoutes from "./routes/AppRoutes";
 
-const toggleChecked = ({_id, isChecked}) => {
-    Meteor.call('tasks.setChecked', _id, !isChecked);
-};
-
-const togglePrivate = ({_id, isPrivate}) => {
-    Meteor.call('tasks.setPrivate', _id, !isPrivate);
-};
-
-const deleteTask = ({_id}) => Meteor.call('tasks.remove', _id);
 
 export const App = () => {
-    const filter = {};
 
-    const [hideCompleted, setHideCompleted] = useState(false);
-
-    if (hideCompleted) {
-        _.set(filter, 'checked', false);
-    }
-
-    const {tasks, incompleteTasksCount, user} = useTracker(() => {
-        Meteor.subscribe('tasks');
-
+    const {user} = useTracker(() => {
         return ({
-            tasks: Tasks.find(filter, {sort: {createdAt: -1}}).fetch(),
-            incompleteTasksCount: Tasks.find({checked: {$ne: true}}).count(),
             user: Meteor.user(),
         });
     });
@@ -49,7 +26,8 @@ export const App = () => {
     return (
         <>
             <BrowserRouter>
-                <Header/>
+                <Header
+                user = {user}/>
                 <AppRoutes/>
             </BrowserRouter>
 
