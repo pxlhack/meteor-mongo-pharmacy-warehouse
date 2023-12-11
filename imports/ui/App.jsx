@@ -26,38 +26,9 @@ export const App = () => {
     return (
         <>
             <BrowserRouter>
-                <Header
-                user = {user}/>
+                <Header user={user}/>
                 <AppRoutes/>
             </BrowserRouter>
-
-            {/* <div className="simple-todos-react">
-                <h1>Todo List ({incompleteTasksCount})</h1>
-
-                <div className="filters">
-                    <label>
-                        <input
-                            type="checkbox"
-                            readOnly
-                            checked={Boolean(hideCompleted)}
-                            onClick={() => setHideCompleted(!hideCompleted)}
-                        />
-                        Hide Completed
-                    </label>
-                </div>
-
-                <ul className="tasks">
-                    {tasks.map(task => <Task
-                        key={task._id}
-                        task={task}
-                        onCheckboxClick={toggleChecked}
-                        onDeleteClick={deleteTask}
-                        onTogglePrivateClick={togglePrivate}
-                    />)}
-                </ul>
-
-                <TaskForm/>
-            </div>*/}
         </>
     );
 };
